@@ -51,9 +51,3 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 RUN composer create-project --prefer-dist laravel/laravel .
-
-RUN chown www-data:www-data -R /var/www/html
-
-CMD php artisan serve --host=0.0.0.0
-
-EXPOSE 8000
